@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_URL = "https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma consulta.";
 
@@ -11,7 +11,7 @@ const WhatsAppButton = () => {
       className="whatsapp-float"
       aria-label="Conversar no WhatsApp"
     >
-      <MessageCircle size={28} className="text-primary-foreground" />
+      <FaWhatsapp size={28} className="text-primary-foreground" />
     </a>
   );
 };
