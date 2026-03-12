@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 30 10% 20%;
+
+    --card: 40 30% 95%;
+    --card-foreground: 30 10% 20%;
+
+    --popover: 40 33% 97%;
+    --popover-foreground: 30 10% 20%;
+
+    --primary: 150 20% 40%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 35 30% 90%;
+    --secondary-foreground: 30 10% 25%;
+
+    --muted: 35 20% 92%;
+    --muted-foreground: 30 8% 50%;
+
+    --accent: 150 15% 85%;
+    --accent-foreground: 150 25% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 150 20% 40%;
+
+    --radius: 0.75rem;
+
+    --sage: 150 20% 40%;
+    --sage-light: 150 15% 85%;
+    --sage-dark: 150 25% 25%;
+    --warm: 35 40% 92%;
+    --warm-dark: 30 25% 82%;
+    --cream: 40 33% 97%;
+    --earth: 30 10% 20%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-24 lg:py-28;
+  }
+
+  .section-padding-sm {
+    @apply px-6 py-12 md:px-12 lg:px-24 lg:py-16;
+  }
+}
+
+/* Scroll animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-children .animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.stagger-children .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.stagger-children .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.stagger-children .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+.stagger-children .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
+.stagger-children .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
+
+/* WhatsApp floating button */
+.whatsapp-float {
+  @apply fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform duration-300 hover:scale-110;
+}
